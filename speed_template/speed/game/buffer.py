@@ -20,11 +20,19 @@ class Buffer(Actor):
         super().__init__()
         position = Point(-1, 0) # or (0, -1)?
         self.set_position(position)
-        self.set_text(f"Buffer: {self._letter}")
+        self._word = ""
+        self.set_text (f"Buffer: {self._letter}")
     
     def add_letter(self, letter):
-        letter = ""
-        self._letter.append(letter)
+        self._word = self._word + str(letter)
+        self.set_text (f"Buffer: {self._letter}")
+
+        # self._letter.append(letter)
+
+    def clear_buffer(self):
+        set.text = ""
+        self.set_text (f"Buffer: {self._letter}")
+
         
     def get_word(self):
         return self.word
