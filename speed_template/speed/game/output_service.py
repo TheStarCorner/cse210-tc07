@@ -1,9 +1,7 @@
+from game import constants 
+from asciimatics.widgets import Frame
+
 class OutputService:
-    
-    from game import constants
-    from asciimatics.widgets import Frame
-    
-    class OutputService:
         """Outputs the game state. The responsibility of the class of objects is to draw the game state on the terminal. 
         
         Stereotype: 
@@ -63,4 +61,6 @@ class OutputService:
             """ 
             self._screen.refresh()    
     
-        
+           
+    
+    
