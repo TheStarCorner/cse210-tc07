@@ -34,7 +34,7 @@ class Director:
             self._word_list.delete_word(word)
         self._buffer.clear_buffer()
         for things in self._word_list:
-            things.move_next()
+            things.move_next() #moves all the words to their next place
     
     def _do_outputs(self):
         self._output_service.clear_screen()
