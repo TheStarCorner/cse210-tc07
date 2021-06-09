@@ -2,8 +2,10 @@ import random
 from game.actor import Actor
 from game.point import Point
 from game.word_list import WordList
+
 import game.constants
 import random
+
 
 class Word(Actor):
     """Verify if the word typed matches 
@@ -15,6 +17,9 @@ class Word(Actor):
         _user_word_typed (?) (string): The sequence of letters typed by the user
     """
     
+
+    def __init__(self, word):
+
     def __init__(self):
         """The class constructor.
         
@@ -22,7 +27,10 @@ class Word(Actor):
             self (Word): An instance of Word.
         
         """
+
+
         word = constants.LIBRARY#needs to be fixed
+
         self._word = word
         
 
@@ -36,9 +44,15 @@ class Word(Actor):
         Returns: 
             boolean: True if both word and randword are equal; false if otherwise.
         """
+
+        return self._word == other.get_randword()
+
+    def get_randword(self):
+
         return self._word == other.get_word()
 
     def get_word(self):
+
         """Gets the random word.
         
         Args:
@@ -48,7 +62,11 @@ class Word(Actor):
             string: A chosen word.
         """
         
+
+        return self._randword
+
         return self._word
+
 
 
  
