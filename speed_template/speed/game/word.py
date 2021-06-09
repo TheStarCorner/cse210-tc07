@@ -3,6 +3,10 @@ import constants
 import random
 
 
+import constants
+import random
+
+
 class Word(Actor):
     """Verify if the word typed matches 
 
