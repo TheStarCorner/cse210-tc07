@@ -33,6 +33,8 @@ class Director:
         if self._word_list.does_contain(word):
             self._word_list.delete_word(word)
         self._buffer.clear_buffer()
+        for things in self._word_list:
+            things.move_next()
     
     def _do_outputs(self):
         self._output_service.clear_screen()
