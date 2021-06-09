@@ -29,7 +29,7 @@ class WordList:
         self._list_of_words = word 
 
 
-    def add_word(self,word):
+    def add_word(self, word):
         #add word onto word_list
         self._list_of_words.append(word)
 
