@@ -1,5 +1,5 @@
-from speed_template.speed.game.constants import MAX_Y
-from game import word
+import constants
+from word import Word
 import random
 
 class WordList:
@@ -26,12 +26,14 @@ class WordList:
             void 
     """
     def __init__(self):
-        self._list_of_words = [None] * MAX_Y
+        self._list_of_words = [None] * constants.MAX_Y
         self._list_of_slots = []
+        for i in range(constants.MAX_Y):
+            self._list_of_slots.append(i)
         
     def add_word(self):
         #add word onto word_list
-        i = self._list_of_slots[random.randint(0,len(self._list_of_slots))]
+        i = self._list_of_slots[random.randint(0,len(self._list_of_slots)-1)]
         self._list_of_slots.remove(i)
         self._list_of_words[i] = Word()
 
@@ -48,10 +50,10 @@ class WordList:
     def delete_word(self,word):
         # delete word from screen
         # need to have a loop that checks the current word to the word that we have in the list currently.
-        for x in range(0,MAX_Y):
+        for x in range(0,constants.MAX_Y):
             if self._list_of_words[x] == word:
+                self._list_of_slots.append(self._list_of_words[x])
                 self._list_of_words[x] = None
-                self._list_of_slots.append(x)
 
     def print(self):
         print("List of Words:", self._list_of_words)
@@ -66,3 +68,4 @@ words.add_word()
 words.add_word()
 words.add_word()
 words.add_word()
+words.print()

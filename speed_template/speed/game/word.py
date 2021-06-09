@@ -32,7 +32,6 @@ class Word(Actor):
         word = constants.LIBRARY[i]
         self._word = word
 
-        print(self._word)
         
 
     def equals(self, word):
