@@ -1,9 +1,5 @@
-from actor import Actor
-import constants
-import random
-
-
-import constants
+from game.actor import Actor
+import game.constants as constants
 import random
 
 
@@ -26,7 +22,7 @@ class Word(Actor):
             word (string)
         
         """
-        
+        super().__init__()
         i = random.randint(0, len(constants.LIBRARY))
 
         word = constants.LIBRARY[i]

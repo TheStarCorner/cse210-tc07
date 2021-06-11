@@ -1,5 +1,5 @@
-import constants
-from word import Word
+import game.constants as constants
+from game.word import Word
 import random
 
 class WordList:
@@ -42,7 +42,7 @@ class WordList:
 
         # need to have a something along the lines of self._list_of_words.contains(word) checking to see if it contains the
         # word that we have typed. 
-        if self._list_of_words.contains(word):
+        if word in self._list_of_words:
             return True
 
         else: return False
@@ -55,17 +55,9 @@ class WordList:
                 self._list_of_slots.append(self._list_of_words[x])
                 self._list_of_words[x] = None
 
-    def print(self):
-        print("List of Words:", self._list_of_words)
-        print("List of Slots:", self._list_of_slots)
-
-
-
-
-words = WordList()
-words.print()
-words.add_word()
-words.add_word()
-words.add_word()
-words.add_word()
-words.print()
+    def get_list(self):
+        a = []
+        for i in self._list_of_words:
+            if not i == None:
+                a.append(i)
+        return a
