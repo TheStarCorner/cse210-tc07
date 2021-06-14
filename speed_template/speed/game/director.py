@@ -48,3 +48,4 @@ class Director:
         self._output_service.draw_actor(self._buffer)
         self._output_service.draw_actors(self._word_list.get_list())
         self._output_service.draw_actor(self._score)
+        self._output_service.flush_buffer()
