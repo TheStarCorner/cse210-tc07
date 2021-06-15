@@ -18,7 +18,7 @@ class Buffer(Actor):
             self (Buffer): an instance of Buffer.
         """
         super().__init__()
-        position = Point(1, 20) # or (0, -1)?
+        position = Point(1, 20)
         self.set_position(position)
         self._word = ""
         self.set_text (f"Buffer: {self._word}")
@@ -30,7 +30,7 @@ class Buffer(Actor):
         # self._letter.append(letter)
 
     def clear_buffer(self):
-        self._word = ""
+        self._word = "*"
         self.set_text (f"Buffer: {self._word}")
 
         
