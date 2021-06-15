@@ -6,6 +6,7 @@ from game.score import Score
 from game.word_list import WordList
 from game.word import Word
 import game.constants as constants
+import sys
 
 class Director:
     def __init__(self, input_service, output_service):
@@ -37,6 +38,8 @@ class Director:
             self._buffer.clear_buffer()
             if self._word_list.does_contain(word):
                 self._word_list.delete_word(word)
+        elif letter == '!':
+            sys.exit()
         else:
             self._buffer.add_letter(letter)
         for things in self._word_list.get_list():
