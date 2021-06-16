@@ -38,6 +38,8 @@ class Director:
             self._buffer.clear_buffer()
             if self._word_list.does_contain(word):
                 self._word_list.delete_word(word)
+                self._word_list.add_word()
+                self._score.add_points(5)
         elif letter == '!':
             sys.exit()
         else:
