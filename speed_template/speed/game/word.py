@@ -25,8 +25,8 @@ class Word(Actor):
         super().__init__()
         i = random.randint(0, len(constants.LIBRARY))
 
-        word = constants.LIBRARY[i]
-        self._word = word
+        self._word = constants.LIBRARY[i]
+        super().set_text(self._word)
 
         
 
@@ -53,5 +53,3 @@ class Word(Actor):
         """
         
         return self._word
-
-a = Word()
