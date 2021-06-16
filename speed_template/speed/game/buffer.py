@@ -30,7 +30,7 @@ class Buffer(Actor):
         # self._letter.append(letter)
 
     def clear_buffer(self):
-        self._word = "*"
+        self._word = ""
         self.set_text (f"Buffer: {self._word}")
 
         
