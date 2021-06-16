@@ -1,5 +1,6 @@
 import game.constants as constants
 from game.word import Word
+from game.point import Point
 import random
 
 class WordList:
@@ -35,7 +36,9 @@ class WordList:
         #add word onto word_list
         i = self._list_of_slots[random.randint(0,len(self._list_of_slots)-1)]
         self._list_of_slots.remove(i)
-        self._list_of_words[i] = Word()
+        new_word = Word()
+        new_word.set_position(Point(random.randint(0, constants.MAX_X), i))
+        self._list_of_words[i] = new_word
 
     def does_contain(self,word):
         #checks to see if given word is in the word list. 
